@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Prog;
 
 namespace тест_теста
@@ -34,12 +35,9 @@ namespace тест_теста
             double number = -1;
             Assert.Throws<CustomException>(() =>
             {
-                
-                double result = number;
-
+                Programa.CheckNumber(number);
             });
-
-
         }
+
     }
 }

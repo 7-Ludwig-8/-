@@ -1,13 +1,16 @@
 ﻿using System;
+
 namespace Prog
 {
     public class CustomException : Exception
     {
         public CustomException(string message) : base(message) { }
     }
-    class Program
+
+    public class Programa 
     {
-        static void CheckNumber(double number) {
+        public static void CheckNumber(double number) 
+        {
             if (number < 0)
             {
                 throw new CustomException("Число не должно быть отрицательным.");
@@ -17,6 +20,7 @@ namespace Prog
                 throw new DivideByZeroException();
             }
         }
+
         static void Main(string[] args)
         {
             while (true)
@@ -27,7 +31,7 @@ namespace Prog
                     string input = Console.ReadLine();
                     int number = Convert.ToInt32(input);
                     CheckNumber(number);
-                    
+
                     int result = 100 / number;
                     Console.WriteLine($"100 разделить на {number} = {result}");
                 }
